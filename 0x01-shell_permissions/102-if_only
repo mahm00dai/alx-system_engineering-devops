@@ -1,0 +1,2 @@
+#!/bin/bash
+chown betty [ "$(stat -c %U hello)" = "guillaume" ]
