@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -A --format=comma | sed 's/^\(.\)$/\1\//'
+ls -A --format=comma | sed '1s/^/.\//' | sed '2s/^/../' | sed 's/,$/\//'
