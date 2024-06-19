@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a --format=comma | { sed '1s/^/.\//' | sed '2s/^/../' } | sed 's/,$/\//'
+ls -p -a | awk 'BEGIN { ORS=", " } { if ($0 == "./" || $0 == "../") { printf $0 } else if (substr($0, 1, 1) == ".") { printf "%s", $0 } else { printf "%s", $0; if (substr($0, length($0), 1) == "/") { printf ", " } else { printf ", " } } } END { printf "\n" }'
