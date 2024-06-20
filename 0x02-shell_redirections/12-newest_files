@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lt | grep -v '^total' | awk '{print $NF}' | head -n 10
+ls -t | head -10
