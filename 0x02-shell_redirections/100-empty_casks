@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty -print | awk -F/ '{print $NF}'
+find . -empty | ls -a -1
