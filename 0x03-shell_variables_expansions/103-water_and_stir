@@ -1,2 +1,2 @@
 #!/bin/bash
-echo $(tr '[:lower:]' '[:upper:]' <<< $(printf "%s\n" $((${#WATER})) $((${#STIR}))))
+echo $(echo -n ${WATER} | tr -d '.' | wc -c | tr -d ' ') $(echo -n ${STIR} | tr -d '.' | wc -c | tr -d ' ')
