@@ -1,2 +1,2 @@
 #!/bin/bash
-cat | cut -c 1
+head -n $(wc -l < "$1") "$1" | tail -n +2 | cut -c 1 | tr -d '\n'
