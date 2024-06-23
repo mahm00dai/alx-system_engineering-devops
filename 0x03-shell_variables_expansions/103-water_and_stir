@@ -1,0 +1,2 @@
+#!/bin/bash
+echo $(tr '[:lower:]' '[:upper:]' <<< $(printf "%s\n" $((${#WATER})) $((${#STIR}))))
