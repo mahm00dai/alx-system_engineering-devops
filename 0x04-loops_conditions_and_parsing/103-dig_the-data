@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Use awk to parse the log file, count occurrences, and sort the results
+awk '{count[$1,$9]++} END {for (i in count) print count[i], i}' apache-access.log | sort -nr
+
