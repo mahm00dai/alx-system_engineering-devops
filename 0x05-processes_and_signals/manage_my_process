@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script writes "I am alive!" to /tmp/my_process every 2 seconds
+
+# Function to write to the file indefinitely
+write_to_file() {
+    while true; do
+        echo "I am alive!" >> /tmp/my_process
+        sleep 2
+    done
+}
+
+# Call the function
+write_to_file
+
