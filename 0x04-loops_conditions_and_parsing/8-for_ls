@@ -1,10 +1,14 @@
 #!/usr/bin/env bash
 # This script displays the contents of the current directory in a list format, showing only the part after the first dash
 
+# Loop through all files in the current directory that contain a dash
 for file in *-*; do
-    # Extract the part after the first dash
-    name_after_dash=${file#*-}
-    # Display the result
-    echo "$name_after_dash"
+    # Check if the file exists to prevent any errors in empty directories
+    if [ -e "$file" ]; then
+        # Extract the part after the first dash
+        name_after_dash="${file#*-}"
+        # Display the result
+        echo "$name_after_dash"
+    fi
 done
 
