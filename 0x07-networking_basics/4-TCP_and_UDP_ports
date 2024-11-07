@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Displays listening TCP, UDP, and UNIX sockets with PID and program name using netstat
+
+# Display listening internet (TCP, UDP) sockets with PID/Program name
+echo "Active Internet connections (only servers)"
+netstat -tulnp | grep -E 'Proto|LISTEN'
+
+# Display listening UNIX domain sockets with PID/Program name
+echo "Active UNIX domain sockets (only servers)"
+netstat -lxp | grep -E 'Proto|LISTEN'
+
